@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration Form</title>
+</head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    padding: 0 10px;
+    background-image: url("assets/images/banner.jpg");
+    background-attachment: fixed;
+}
+.wrapper{
+    max-width: 730px;
+    width: 100%;
+    background-color: #fff;
+    margin: 20px auto;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.125);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px;
+}
+.wrapper .title{
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: blue;
+    text-transform: uppercase;
+    text-align: center;
+}
+.wrapper .form .inputfield, .form-group{
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    color: #757575;
+}
+.wrapper .form .inputfield label, .form-group label{
+    width: 200px;
+    color: #757575;
+    margin-right: 10px;
+    font-size: 14px;
+}
+.check-group {
+    font-size: 14px;
+}
+.fill {
+    font-size: 14px;
+}
+.wrapper .form .inputfield .input{
+  width: 100%;
+  border: 1px solid gray;
+  font-size: 15px;
+  padding: 8px 10px;
+  border-radius: 3px;
+}
+.wrapper #addressForm .form-group .input{
+    width: 100%;
+    border: 1px solid gray;
+    font-size: 15px;
+    padding: 8px 10px;
+    border-radius: 3px;
+}
+.wrapper .submit-button .btn{
+    font-size: 20px;
+    font-weight: 150;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    background-color: lightskyblue;
+    cursor: pointer;
+    border: none;
+    color: white;
+}
+.wrapper .submit-button .btn:hover{
+    background-color: #3C99DC;
+}
+select{
+    width: 662px;
+    height: 35px;
+}
+</style>
+<body>
+    <div class="wrapper">
+        <div class="title">
+            Event Information
+        </div>
+        <div class="form">
+            <form id="userform" action="event.php" method="post">
+            <div class="inputfield">
+                <label>Event Name</label>
+                <input type="text" placeholder="Enter Event Name" id="firstname" name="eventname" class="input" required>
+            </div>
+            <div class="inputfield">
+                <label>Event Type</label>
+               <select name="eventtype" id="eventtype">
+                <option value="select">
+                    Select
+                </option>
+                <option value="bdy">
+                    Birthday Party
+                </option>
+                <option value="Wedding">
+                    Wedding
+                </option>
+                <option value="Public Event">
+                    Public Event
+                </option>
+                <option value="Valentine">
+                    Valentine
+                </option>
+               </select>
+            </div>
+            <div class="inputfield">
+                <label>Date</label>
+                <input type="date" id="date" name="date" class="input">
+            </div>
+            <div class="inputfield">
+                <label>Time</label>
+                <input type="time" id="time" name="time" class="input">
+            </div>
+            <div class="inputfield">
+                <label>Venue</label>
+               <select name="venue" id="venue">
+                <option value="select">
+                    Select
+                </option>
+                <option value="chennai">
+                    Chennai
+                </option>
+                <option value="Coimbatore">
+                    Coimbatore
+                </option>
+                <option value="Vellore">
+                    Vellore
+                </option>
+                <option value="Thrichy">
+                    Thrichy
+                </option>
+                <option value="Thenkasi">
+                    Thenkasi
+                </option>
+                <option value="Theni">
+                    Theni
+                </option>
+                <option value="Kanniyakumari">
+                    Kanniyakumari
+                </option>
+               </select>
+            </div>
+
+            <div>
+                <label for="extraFeatures">Extra Features:</label>
+                <input type="checkbox" id="music" name="extraFeatures" value="Music (DJ)" class="input">
+                <label for="music">Music (DJ)</label>
+                <input type="checkbox" id="dance" name="extraFeatures" value="Dance" class="input">
+                <label for="dance">Dance</label><br>
+                <label for="foodType" class="input">Food Type (Veg/Non-Veg)</label>
+                <select name="foodType" id="foodType" >
+                    <option value="veg">
+                        Veg
+                    </option>
+                    <option value="non-veg">
+                        Non-Veg
+                    </option>
+                </select>
+                <label for="maxAttendees">Max Attendees:</label>
+                <input type="number" id="maxAttendees" name="maxAttendees" min="1" required>
+            </div>
+            <div class="submit-button">
+                <button class="btn">Continue</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

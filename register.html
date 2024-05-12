@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration Form</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Montserrat', sans-serif;
+    }
+    body{
+        padding: 0 10px;
+        background-image: url("assets/images/banner.jpg");
+        background-attachment: fixed;
+    }
+    .wrapper{
+        max-width: 730px;
+        width: 100%;
+        background-color: #fff;
+        margin: 20px auto;
+        box-shadow: 1px 1px 2px rgba(0,0,0,0.125);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 0 10px;
+    }
+    .wrapper .title{
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 25px;
+        color: blue;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    .wrapper .form .inputfield, .form-group{
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        color: #757575;
+    }
+    .wrapper .form .inputfield label, .form-group label{
+        width: 200px;
+        color: #757575;
+        margin-right: 10px;
+        font-size: 14px;
+    }
+    .check-group {
+        font-size: 14px;
+    }
+    .fill {
+        font-size: 14px;
+    }
+    .wrapper .form .inputfield .input{
+      width: 100%;
+      border: 1px solid gray;
+      font-size: 15px;
+      padding: 8px 10px;
+      border-radius: 3px;
+    }
+    .wrapper #addressForm .form-group .input{
+        width: 100%;
+        border: 1px solid gray;
+        font-size: 15px;
+        padding: 8px 10px;
+        border-radius: 3px;
+    }
+    .wrapper .submit-button .btn{
+        font-size: 20px;
+        font-weight: 150;
+        font-family: 'Montserrat', sans-serif;
+        width: 100%;
+        height: 50px;
+        border-radius: 25px;
+        background-color: lightskyblue;
+        cursor: pointer;
+        border: none;
+        color: white;
+    }
+    .wrapper .submit-button .btn:hover{
+        background-color: #3C99DC;
+    }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">
+            User Information
+        </div>
+        <div class="form">
+            <form id="userForm" action="register.php" method="post">
+                <div class="inputfield">
+                    <label>First Name</label>
+                    <input type="text" placeholder="Enter First Name" id="firstname" name="firstname" class="input" required>
+                </div>
+                <div class="inputfield">
+                    <label>Last Name</label>
+                    <input type="text" placeholder="Enter Last Name" id="lastname" name="lastname" class="input" required>
+                </div>
+                <div class="inputfield">
+                    <label>DOB</label>
+                    <input type="date" id="date" name="date" class="input">
+                </div>
+                <div class="inputfield">
+                    <label>Gender</label>
+                    <div class="select_gender">
+                        <input type="radio" value="male" name="gender">Male
+                        <input type="radio" value="female" name="gender">Female
+                        <input type="radio" value="others" name="gender">Others
+                    </div>
+                </div>
+                <div class="inputfield">
+                    <label>Phone</label>
+                    <input type="text" placeholder="Enter Phone No" id="phoneno" name="phoneno" size="10" class="input" required>
+                </div>
+                <div class="inputfield">
+                    <label>Email</label>
+                    <input type="text" placeholder="Enter Email" id="email" name="email" class="input" required>
+                </div>
+                <input type="checkbox">
+                <a href="#"><i>Agreed to terms and conditions</i></a><br><br>
+                <div class="submit-button">
+                    <button class="btn">Continue</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        // function submitForm() {
+        //     // Combine form data
+        //     var formData = new FormData();
+        //     var userForm = document.getElementById('userForm');
+        //     var addressForm = document.getElementById('addressForm');
+        //     for (var i = 0; i < userForm.elements.length; i++) {
+        //         formData.append(userForm.elements[i].name, userForm.elements[i].value);
+        //     }
+        //     for (var i = 0; i < addressForm.elements.length; i++) {
+        //         formData.append(addressForm.elements[i].name, addressForm.elements[i].value);
+        //     }
+        //     // Make AJAX request or any other submission method
+        //     // Example:
+        //     // var xhr = new XMLHttpRequest();
+        //     // xhr.open('POST', 'connect.php', true);
+        //     // xhr.onload = function() {
+        //     //     if (xhr.status === 200) {
+        //     //         // Success, do something
+        //     //     }
+        //     // };
+        //     // xhr.send(formData);
+        //     // For demonstration purpose, redirecting to another page
+        //     window.location.href = "event.html";
+        // }
+    </script>
+</body>
+</html>

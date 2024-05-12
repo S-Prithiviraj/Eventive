@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration Summary</title>
+    <style>
+        /* CSS styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .summary-item {
+            margin-bottom: 10px;
+        }
+        .summary-item label {
+            font-weight: bold;
+        }
+        .qr-code {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #done-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Event Registration Summary</h2>
+        <div class="summary-item">
+            <label>Event Name:</label>
+            <span id="event-name"></span>
+        </div>
+        <div class="summary-item">
+            <label>Event Type:</label>
+            <span id="event-type"></span>
+        </div>
+        <div class="summary-item">
+            <label>Date:</label>
+            <span id="event-date"></span>
+        </div>
+        <div class="summary-item">
+            <label>Time:</label>
+            <span id="event-time"></span>
+        </div>
+        <div class="summary-item">
+            <label>Venue:</label>
+            <span id="event-venue"></span>
+        </div>
+        <div class="summary-item">
+            <label>Extra Features:</label>
+            <span id="extra-features"></span>
+        </div>
+        <div class="summary-item">
+            <label>Food Type:</label>
+            <span id="food-type"></span>
+        </div>
+        <div class="summary-item">
+            <label>Max Attendees:</label>
+            <span id="max-attendees"></span>
+        </div>
+        <div class="summary-item">
+            <label>Payment Method:</label>
+            <span id="payment-method"></span>
+        </div>
+        <div class="summary-item">
+            <label>Payment Amount:</label>
+            <span id="payment-amount"></span>
+        </div>
+        <div>
+            <img src="assets/images/qrcode.png" alt="qrcode">
+        </div>
+        <div class="summary-item">
+            <label>Transaction ID:</label>
+            <span id="transaction-id"></span>
+        </div>
+        <button id="done-button">Done</button>
+    </div>
+    <script>
+        // Retrieve data from local storage
+        const eventName = localStorage.getItem('eventName');
+        const eventType = localStorage.getItem('eventType');
+        const eventDate = localStorage.getItem('eventDate');
+        const eventTime = localStorage.getItem('eventTime');
+        const eventVenue = localStorage.getItem('eventVenue');
+        const extraFeatures = localStorage.getItem('extraFeatures');
+        const foodType = localStorage.getItem('foodType');
+        const maxAttendees = localStorage.getItem('maxAttendees');
+        const paymentMethod = localStorage.getItem('paymentMethod');
+        const paymentAmount = localStorage.getItem('paymentAmount');
+        const transactionId = generateTransactionId();
+
+        // Display event details on the page
+        document.getElementById('event-name').innerText = eventName;
+        document.getElementById('event-type').innerText = eventType;
+        document.getElementById('event-date').innerText = eventDate;
+        document.getElementById('event-time').innerText = eventTime;
+        document.getElementById('event-venue').innerText = eventVenue;
+        document.getElementById('extra-features').innerText = extraFeatures;
+        document.getElementById('food-type').innerText = foodType;
+        document.getElementById('max-attendees').innerText = maxAttendees;
+
+        // Display transaction details on the page
+        document.getElementById('payment-method').innerText = paymentMethod;
+        document.getElementById('payment-amount').innerText = paymentAmount;
+        document.getElementById('transaction-id').innerText = transactionId;
+
+        // Generate a random transaction ID
+        function generateTransactionId() {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let result = '';
+            for (let i = 0; i < 10; i++) {
+                result += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return result;
+        }
+        // Handle 'Done' button click
+        document.getElementById('done-button').addEventListener('click', function() {
+            alert('Thank you for registering an event. You will be notified shortly.');
+            // Clear local storage
+            localStorage.clear();
+            // Redirect to homepage or any other page as needed
+            // window.location.href = 'homepage.html';
+        });
+    </script>
+</body>
+</html>
